@@ -6,7 +6,7 @@ const StudentList = () => {
     const { students, deleteStudent, openModal, showModal, currentStudent } = useContext(StudentContext);
 
     return (
-        <div>
+        <>
             <button onClick={() => openModal()}>Add Student</button>
             <h2>All Students</h2>
             <ul>
@@ -22,7 +22,7 @@ const StudentList = () => {
                 ))}
             </ul>
             {showModal && <StudentForm currentStudent={currentStudent} />}
-        </div>
+        </>
     );
 };
 

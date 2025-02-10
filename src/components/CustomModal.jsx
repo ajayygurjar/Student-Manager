@@ -1,10 +1,8 @@
-
+import ReactDOM from 'react-dom';
 import './CustomModal.css';
 
-const CustomModal = ({ show, handleClose, children }) => {
-    if (!show) return null;
-
-    const handleClick = (e) => e.stopPropagation();
+const Modal = ({ handleClose, children }) => {
+    const handleClick = (e) => e.stopPropagation(); 
 
     return (
         <div className="modal-overlay" onClick={handleClose}>
@@ -13,6 +11,17 @@ const CustomModal = ({ show, handleClose, children }) => {
                 {children}
             </div>
         </div>
+    );
+}
+
+const CustomModal = ({ show, handleClose, children }) => {
+    if (!show) return null; 
+
+    return ReactDOM.createPortal(
+        <Modal handleClose={handleClose}>
+            {children}
+        </Modal>,
+        document.getElementById('backdrop-root') 
     );
 };
 

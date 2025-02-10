@@ -21,7 +21,7 @@ const StudentProvider = ({ children }) => {
         setStudents(students.filter((student) => student.id !== id));
     };
 
-    
+    //Modal 
     const [showModal, setShowModal] = useState(false);
     const [currentStudent, setCurrentStudent] = useState(null);
 

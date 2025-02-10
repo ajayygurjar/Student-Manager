@@ -9,7 +9,7 @@ const StudentForm = () => {
 
     const handleChange = (e) => {
         setStudent({ ...student, [e.target.name]: e.target.value })
-    };
+    };//multiple changes at once
 
     const handleSubmit = (e) => {
         e.preventDefault();
